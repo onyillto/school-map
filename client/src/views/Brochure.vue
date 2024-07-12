@@ -16,14 +16,14 @@
                   class="inline-block mb-4 text-sm text-green-400 font-medium tracking-tighter"
                   >Biologist</span
                 >
-                <a class="group inline-block max-w-sm" href="#">
+                <a class="group inline-block max-w-sm" href="/public/biologist.pdf" target="_blank">
                   <h3
                     class="mb-4 text-3xl text-white tracking-3xl hover:underline"
                   >
                     Get more about your department
                   </h3>
                 </a>
-                <a class="group inline-flex items-center" href="#">
+                <a class="group inline-flex items-center" href="/public/biologist.pdf" target="_blank">
                   <span class="mr-3.5 text-white font-medium">Learn more</span>
                   <svg
                     class="transform group-hover:rotate-90 transition duration-300"
@@ -66,14 +66,14 @@
                   class="inline-block mb-4 text-sm text-green-400 font-medium tracking-tighter"
                   >Computer Science</span
                 >
-                <a class="group inline-block max-w-sm" href="#">
+                <a class="group inline-block max-w-sm" href="/public/biologist.pdf" target="_blank">
                   <h3
                     class="mb-4 text-3xl text-white tracking-3xl hover:underline"
                   >
                     Get more about your department
                   </h3>
                 </a>
-                <a class="group inline-flex items-center" href="#">
+                <a class="group inline-flex items-center" href="/public/biologist.pdf" target="_blank">
                   <span class="mr-3.5 text-white font-medium">Learn more</span>
                   <svg
                     class="transform group-hover:rotate-90 transition duration-300"
@@ -116,14 +116,14 @@
                   class="inline-block mb-4 text-sm text-green-400 font-medium tracking-tighter"
                   >Accounting</span
                 >
-                <a class="group inline-block max-w-sm" href="#">
+                <a class="group inline-block max-w-sm" href="/public/biologist.pdf" target="_blank">
                   <h3
                     class="mb-4 text-3xl text-white tracking-3xl hover:underline"
                   >
                     Get more about your department
                   </h3>
                 </a>
-                <a class="group inline-flex items-center" href="#">
+                <a class="group inline-flex items-center" href="/public/biologist.pdf" target="_blank">
                   <span class="mr-3.5 text-white font-medium">Learn more</span>
                   <svg
                     class="transform group-hover:rotate-90 transition duration-300"
