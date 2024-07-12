@@ -5,41 +5,46 @@
       <!-- Navbar content -->
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="relative flex items-center justify-between">
+          <!-- Logo and Large Screen Navigation Links -->
           <router-link to="/" aria-label="Company" title="Company" class="inline-flex items-center">
-  <img src="https://www.caritasuni.edu.ng/assets/images/logo-header-1-116x128.png" alt="Caritas University Logo" class="h-11 w-11">
-</router-link>
+            <img src="https://www.caritasuni.edu.ng/assets/images/logo-header-1-116x128.png" alt="Caritas University Logo" class="h-11 w-11">
+          </router-link>
 
           <ul class="flex items-center hidden space-x-8 lg:flex">
-            
-             <li>
+            <!-- Home Link -->
+            <li>
               <router-link
                 to="/"
-                aria-label="GUIDE"
-                title="GUIDE"
+                aria-label="Home"
+                title="Home"
                 class="font-medium tracking-wide text-purple-800 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Home
               </router-link>
             </li>
-                          <router-link
+            <!-- Brochure Link -->
+            <li>
+              <router-link
                 to="/brochure"
                 aria-label="Brochure"
                 title="Brochure"
                 class="font-medium tracking-wide text-purple-800 transition-colors duration-200 hover:text-teal-accent-400"
               >
-Brochure
+                Brochure
               </router-link>
+            </li>
+            <!-- Guide Link -->
             <li>
               <router-link
                 to="/guide"
-                aria-label="GUIDE"
-                title="GUIDE"
+                aria-label="Guide"
+                title="Guide"
                 class="font-medium tracking-wide text-purple-800 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                GUIDE
+                Guide
               </router-link>
             </li>
-           
+            <!-- Blogs Link -->
             <li>
               <router-link
                 to="/blogs"
@@ -50,27 +55,30 @@ Brochure
                 Blogs
               </router-link>
             </li>
+            <!-- Conditional Sign Up/Logout Button -->
             <router-link
-  v-if="!isLoggedIn"
-  to="/signup"
-  class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-  aria-label="Sign up"
-  title="Sign up"
->
-  Sign up
-</router-link>
+              v-if="!isLoggedIn"
+              to="/signup"
+              class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              aria-label="Sign up"
+              title="Sign up"
+            >
+              Sign up
+            </router-link>
 
-<router-link
-  v-if="isLoggedIn"
-  to="/logout"
-  class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-red-500 hover:bg-red-600 focus:shadow-outline focus:outline-none"
-  aria-label="Logout"
-  title="Logout"
->
-  Logout
-</router-link>
-
+            <router-link
+              v-if="isLoggedIn"
+              to="/login"
+              class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-red-500 hover:bg-red-600 focus:shadow-outline focus:outline-none"
+              aria-label="Logout"
+              title="Logout"
+              @click="handleLogout"
+            >
+              Logout
+            </router-link>
           </ul>
+
+          <!-- Mobile Menu Button -->
           <div class="lg:hidden">
             <button
               aria-label="Open Menu"
@@ -84,12 +92,13 @@ Brochure
                 <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
               </svg>
             </button>
+            <!-- Mobile Menu Content -->
             <div v-if="isMenuOpen" class="absolute top-0 left-0 w-full">
               <div class="p-5 bg-white border rounded shadow-sm">
                 <div class="flex items-center justify-between mb-4">
                   <div>
                     <router-link to="/" aria-label="Company" title="Company" class="inline-flex items-center">
-                      <<img src="https://www.caritasuni.edu.ng/assets/images/logo-header-1-116x128.png" alt="Caritas University Logo" class="h-11 w-11">
+                      <img src="https://www.caritasuni.edu.ng/assets/images/logo-header-1-116x128.png" alt="Caritas University Logo" class="h-11 w-11">
                       <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span>
                     </router-link>
                   </div>
@@ -109,23 +118,24 @@ Brochure
                     </button>
                   </div>
                 </div>
+                <!-- Mobile Menu Navigation Links -->
                 <nav>
                   <ul class="space-y-4">
                     <li>
                       <router-link
                         to="/"
-                        aria-label="GUIDE"
-                        title="GUIDE"
+                        aria-label="Home"
+                        title="Home"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Home
                       </router-link>
                     </li>
-                                        <li>
+                    <li>
                       <router-link
                         to="/brochure"
-                        aria-label="GUIDE"
-                        title="GUIDE"
+                        aria-label="Brochure"
+                        title="Brochure"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Brochure
@@ -133,15 +143,14 @@ Brochure
                     </li>
                     <li>
                       <router-link
-                        to="/GUIDE"
-                        aria-label="GUIDE"
-                        title="GUIDE"
+                        to="/guide"
+                        aria-label="Guide"
+                        title="Guide"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        GUIDE
+                        Guide
                       </router-link>
                     </li>
-                  
                     <li>
                       <router-link
                         to="/blogs"
@@ -150,16 +159,6 @@ Brochure
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Blogs
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        to="/signup"
-                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                        aria-label="Sign up"
-                        title="Sign up"
-                      >
-                        Sign up
                       </router-link>
                     </li>
                   </ul>
@@ -186,9 +185,18 @@ export default {
       return localStorage.getItem('token') !== null;
     },
   },
+  methods: {
+    handleLogout() {
+      // Perform logout actions here, such as clearing local storage
+      localStorage.removeItem('isLogged');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('token');
+      localStorage.removeItem('loglevel');
+      localStorage.removeItem('user');
+      // Redirect to login page
+      this.$router.push('/login');
+    },
+  },
 };
 </script>
 
-<style scoped>
-/* Add your styles here */
-</style>
