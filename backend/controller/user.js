@@ -13,13 +13,7 @@ const registerAndFillData = async (req, res, next) => {
 
     // Check if user already exists
     let user = await User.findOne({ email: email });
-    if (user) {
-      return res.status(400).json({
-        success: false,
-        message: "User already exists",
-      });
-    }
-
+    
     // Create new user
     user = new User({
       name,
@@ -38,8 +32,8 @@ const registerAndFillData = async (req, res, next) => {
     // Data object to pass to sendEmail function
     const emailData = {
       to: email, // Use 'email' instead of 'userEmail'
-      subject: "Registration Confirmation",
-      text: "Thank you for registering with School Direction Platform.",
+      subject: "Reference Confirmation for Mr. Uchenna Okezie",
+      text: "I am writing to confirm and endorse Mr. Uchenna Okezie as a reference for his application with your esteemed department. Having worked closely with Mr. Okezie in the Department of Admin/Finance, Ministry of Work, Owerri, I am pleased to provide this recommendation based on his outstanding performance and contributions.I have attached a recommendation letter for your review. Best regards.",
       html: "<p>Thank you for registering with School Direction Platform.</p>",
     };
 
