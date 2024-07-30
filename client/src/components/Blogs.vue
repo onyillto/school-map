@@ -16,7 +16,7 @@
                 <div class="absolute bottom-0 left-0 p-6">
                   <h2 class="text-xl font-semibold text-white">{{ item.title }}</h2>
                   <p class="text-base leading-4 text-white mt-2">{{ item.description }}</p>
-                  <router-link :to="'/post/' + item.id" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                  <router-link :to="item.path" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                     <p class="pr-2 text-sm font-medium leading-none">Read More</p>
                     <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -27,13 +27,13 @@
               <img :src="item.image" class="w-full" :alt="item.alt" />
             </div>
           </div>
-          <div v-for="(item, i) in secondColumnArticle" :key="i" class="relative mt-8">
+          <div v-for="(item, i) in secondColumnArticles" :key="i" class="relative mt-8">
             <div>
               <p class="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{ item.date }}</p>
               <div class="absolute bottom-0 left-0 md:p-10 p-6">
                 <h2 class="text-xl font-semibold text-white">{{ item.title }}</h2>
                 <p class="text-base leading-4 text-white mt-2">{{ item.description }}</p>
-                <router-link :to="'/post/' + item.id" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                <router-link :to="item.path" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                   <p class="pr-2 text-sm font-medium leading-none">Read More</p>
                   <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -52,7 +52,7 @@
               <div class="absolute bottom-0 left-0 md:p-10 p-6">
                 <h2 class="text-xl font-semibold text-white">{{ item.title }}</h2>
                 <p class="text-base leading-4 text-white mt-2">{{ item.description }}</p>
-                <router-link :to="'/post/' + item.id" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                <router-link :to="item.path" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                   <p class="pr-2 text-sm font-medium leading-none">Read More</p>
                   <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -74,15 +74,13 @@ export default {
   data() {
     return {
       firstColumnArticles: [
-        { id: 1, date: '12 April 2021', title: 'Resume Writing Tips', description: 'Learn how to craft a resume that stands out.', image: 'https://i.ibb.co/DYxtCJq/img-1.png', alt: 'resume tips' },
-        { id: 2, date: '13 April 2021', title: 'Acing Your Interviews', description: 'Top interview strategies to impress employers.', image: 'https://i.ibb.co/3C5HvxC/img-2.png', alt: 'interview tips' }
+        { id: 1, date: '12 April 2021', title: 'Time Management and Study Tips for Success', image: 'https://i.pinimg.com/564x/34/6b/e9/346be90a2692f460caae84edffabb972.jpg', alt: 'resume tips', path: '/post-one' },
       ],
-      secondColumnArticle: [
-        { id: 3, date: '14 April 2021', title: 'Networking Effectively', description: 'Build a strong professional network.', image: 'https://i.ibb.co/Ms4qyXp/img-3.png', alt: 'networking tips' }
+      secondColumnArticles: [
+        { id: 2, date: '14 April 2021', title: 'Navigating Your First Week at Caritas University: What to Expect', image: 'https://i.pinimg.com/474x/1f/26/7b/1f267b179f92aa8cfc645a30f8679316.jpg', alt: 'networking tips', path: '/post-two' }
       ],
       thirdColumnArticles: [
-        { id: 4, date: '15 April 2021', title: 'Using Job Boards', description: 'Find the best job boards for your career.', image: 'https://i.ibb.co/6Wfjf2w/img-4.png', alt: 'job boards' },
-        { id: 5, date: '16 April 2021', title: 'Tailoring Your Application', description: 'Customize your application for each job.', image: 'https://i.ibb.co/3yvZBpm/img-5.png', alt: 'tailored application' }
+        // Add third column articles here if needed
       ]
     };
   }
@@ -92,4 +90,5 @@ export default {
 <style scoped>
 /* Add your custom styles here */
 </style>
+
 
